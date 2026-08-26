@@ -684,3 +684,122 @@ body.film-theme { background: #000; color: #fff; }
 .credits .c-mail:hover { color: #8fb3d9; }
 .credits .c-xhs { margin-top: 14px; font-size: 12px; color: #888; letter-spacing: 0.14em; }
 .credits .c-end { margin-top: 80px; font-size: 10px; letter-spacing: 0.3em; color: #555; text-transform: uppercase; }
+
+/* ============ 剧本档案（昆汀式） ============ */
+.sheet-page { background: #faf9f4; color: #141414; }
+
+/* 剧本封面 */
+.script-cover { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 120px 28px; }
+.script-cover .c-prod { font-family: "Courier New", Courier, monospace; font-size: 12px; letter-spacing: 0.26em; color: #888; }
+.script-cover .c-title { font-size: clamp(40px, 7vw, 88px); font-weight: 900; letter-spacing: -0.01em; line-height: 1.1; margin-top: 40px; }
+.script-cover .c-sub { font-family: "Courier New", Courier, monospace; font-size: 13px; letter-spacing: 0.3em; color: #666; margin-top: 18px; text-transform: uppercase; }
+.script-cover .c-rule { margin-top: 56px; font-family: "Courier New", Courier, monospace; font-size: 13px; color: #333; line-height: 2.2; }
+.script-cover .c-scroll { margin-top: 70px; font-family: "Courier New", Courier, monospace; font-size: 11px; letter-spacing: 0.24em; color: #999; }
+
+/* 剧本正文 */
+.script { max-width: 820px; margin: 0 auto; padding: 90px 28px; }
+.script .pg { font-family: "Courier New", Courier, monospace; font-size: 11px; color: #999; text-align: right; margin-bottom: 30px; }
+.script .fade { font-family: "Courier New", Courier, monospace; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; margin-bottom: 40px; }
+.script .slug { font-family: "Courier New", Courier, monospace; font-size: 14.5px; font-weight: 700; text-transform: uppercase; margin: 50px 0 18px; letter-spacing: 0.02em; }
+.script .action { font-size: 14.5px; line-height: 2.1; color: #333; margin-bottom: 1.2em; max-width: 40em; }
+.script .action b { font-weight: 700; color: #141414; }
+.script .paren { font-family: "Courier New", Courier, monospace; font-size: 13px; color: #666; margin-bottom: 1em; }
+.script .dialogue { font-size: 14.5px; line-height: 2; max-width: 30em; margin: 1em auto; text-align: center; color: #333; }
+.script .who { font-family: "Courier New", Courier, monospace; font-size: 13px; font-weight: 700; text-transform: uppercase; text-align: center; margin-top: 1.6em; }
+
+/* 章卡 */
+.chapter-card { background: #141414; color: #fff; text-align: center; padding: 100px 28px; }
+.chapter-card .cc-no { font-family: "Courier New", Courier, monospace; font-size: 12px; letter-spacing: 0.34em; color: #888; }
+.chapter-card .cc-t { font-size: clamp(34px, 5.4vw, 66px); font-weight: 900; letter-spacing: -0.01em; margin-top: 18px; }
+.chapter-card .cc-en { font-family: "Courier New", Courier, monospace; font-size: 12px; letter-spacing: 0.3em; color: #999; margin-top: 12px; text-transform: uppercase; }
+
+/* 场景条目（含链接） */
+.scene-link { display: block; text-decoration: none; color: inherit; margin-bottom: 8px; }
+.scene-link:hover .slug { color: var(--accent); }
+.scene-link .slug { display: inline-block; border-bottom: 2px solid transparent; transition: border-color 0.2s; }
+.scene-link:hover .slug { border-color: var(--accent); }
+
+/* 表格式页面（人物/道具/日程） */
+.sheet-table { max-width: 820px; margin: 0 auto; padding: 90px 28px; }
+.sheet-table .st-lab { font-family: "Courier New", Courier, monospace; font-size: 12px; letter-spacing: 0.3em; color: #999; text-transform: uppercase; margin-bottom: 10px; }
+.sheet-table h2 { font-size: clamp(30px, 4.4vw, 52px); font-weight: 900; letter-spacing: -0.02em; margin-bottom: 40px; }
+.st-row { display: flex; gap: 26px; padding: 16px 0; border-top: 1px solid #ddd8cc; align-items: baseline; }
+.st-row:last-child { border-bottom: 1px solid #ddd8cc; }
+.st-row .k { font-family: "Courier New", Courier, monospace; font-size: 12px; color: #888; width: 20%; flex: none; letter-spacing: 0.1em; }
+.st-row .v { font-size: 16px; font-weight: 600; }
+.st-row .d { margin-left: auto; font-size: 12.5px; color: #888; text-align: right; }
+
+/* 片尾 */
+.fade-out { max-width: 820px; margin: 0 auto; padding: 90px 28px 60px; }
+.fade-out .fade { font-family: "Courier New", Courier, monospace; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; }
+.fade-out .mail { display: inline-block; margin-top: 40px; font-family: "Courier New", Courier, monospace; font-size: 17px; font-weight: 700; color: #141414; text-decoration: none; border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
+.fade-out .xhs { margin-top: 14px; font-family: "Courier New", Courier, monospace; font-size: 12px; color: #888; }
+
+/* ============ 电影元素 ============ */
+/* REC 指示灯 */
+.rec {
+  position: fixed; top: 74px; right: 26px; z-index: 60;
+  display: flex; align-items: center; gap: 7px;
+  font-family: "Courier New", Courier, monospace; font-size: 11px; letter-spacing: 0.22em; color: #c33;
+}
+.rec .dot { width: 9px; height: 9px; border-radius: 50%; background: #e33; animation: recBlink 1.4s infinite; }
+@keyframes recBlink { 0%,60% { opacity: 1; } 61%,100% { opacity: 0.15; } }
+
+/* 时间码 */
+.tc { font-family: "Courier New", Courier, monospace; font-size: 11px; letter-spacing: 0.14em; color: #999; }
+
+/* 场记板 */
+.clapboard { display: flex; justify-content: center; padding: 20px 28px 0; }
+.clapboard svg { width: 100%; max-width: 420px; height: auto; }
+
+/* 字幕条（金句） */
+.subtitle-bar {
+  background: #000; color: #fff; text-align: center;
+  padding: 70px 28px; margin: 0;
+}
+.subtitle-bar .st-text { font-size: clamp(20px, 2.6vw, 30px); font-weight: 700; letter-spacing: 0.02em; line-height: 1.8; }
+.subtitle-bar .st-tc { margin-top: 20px; font-family: "Courier New", Courier, monospace; font-size: 11px; letter-spacing: 0.24em; color: #777; }
+
+/* 镜号 */
+.shot-no { font-family: "Courier New", Courier, monospace; font-size: 11px; letter-spacing: 0.2em; color: #999; margin-bottom: 4px; }
+
+/* 取景框角标 */
+.viewfinder { position: relative; display: inline-block; }
+.viewfinder::before, .viewfinder::after,
+.viewfinder .vf-in::before, .viewfinder .vf-in::after {
+  content: ""; position: absolute; width: 22px; height: 22px; z-index: 5;
+}
+.viewfinder::before { top: 8px; left: 8px; border-top: 3px solid #fff; border-left: 3px solid #fff; }
+.viewfinder::after { top: 8px; right: 8px; border-top: 3px solid #fff; border-right: 3px solid #fff; }
+.viewfinder .vf-in::before { bottom: 8px; left: 8px; border-bottom: 3px solid #fff; border-left: 3px solid #fff; }
+.viewfinder .vf-in::after { bottom: 8px; right: 8px; border-bottom: 3px solid #fff; border-right: 3px solid #fff; }
+
+/* 胶片条 */
+.film-strip {
+  display: flex; overflow: hidden; background: #141414;
+  padding: 14px 0; gap: 0;
+}
+.film-strip .fr {
+  flex: none; width: 120px; margin: 0 3px; height: 60px;
+  background: #2a2a2a; position: relative;
+  overflow: hidden;
+}
+.film-strip .fr img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; }
+.film-strip .fr::after {
+  content: ""; position: absolute; inset: 0;
+  background: repeating-linear-gradient(90deg, #141414 0 2px, transparent 2px 8px);
+  mix-blend-mode: screen;
+}
+/* 齿孔 */
+.film-strip .sp { flex: none; width: 14px; height: 60px; background: #141414; position: relative; }
+.film-strip .sp::before, .film-strip .sp::after {
+  content: ""; position: absolute; left: 3px; width: 8px; height: 12px; background: #faf9f4;
+}
+.film-strip .sp::before { top: 6px; }
+.film-strip .sp::after { bottom: 6px; }
+
+/* 片盘（片尾） */
+.reel { display: inline-flex; gap: 26px; margin-top: 40px; }
+.reel .disc { width: 74px; height: 74px; border-radius: 50%; border: 3px solid #ddd8cc; position: relative; }
+.reel .disc::before { content: ""; position: absolute; inset: 14px; border-radius: 50%; border: 2px dashed #ddd8cc; }
+.reel .disc::after { content: ""; position: absolute; inset: 27px; border-radius: 50%; background: #ddd8cc; }
