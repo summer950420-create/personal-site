@@ -45,18 +45,24 @@
   items.forEach(function (el) { io.observe(el); });
 })();
 
-/* ---------- 图层面板交互（首页） ---------- */
+/* ---------- 图层面板交互（Adobe 式） ---------- */
 (function () {
-  var layers = document.querySelectorAll(".layer input");
-  if (!layers.length) return;
-  var cur = document.body.getAttribute("data-layers") || "";
-  var set = new Set(cur.split(/\s+/).filter(Boolean));
-  layers.forEach(function (inp) {
-    inp.checked = set.has(inp.value);
-    inp.addEventListener("change", function () {
-      if (inp.checked) set.add(inp.value);
-      else set.delete(inp.value);
-      document.body.setAttribute("data-layers", Array.from(set).join(" "));
+  var rows = document.querySelectorAll(".layer-row");
+  if (!rows.length) return;
+  rows.forEach(function (row) {
+    row.addEventListener("click", function () {
+      var layer = row.getAttribute("data-layer");
+      var isOn = row.classList.contains("on");
+      var g = document.querySelector('g[data-layer="' + layer + '"]');
+      if (isOn) {
+        row.classList.remove("on");
+        row.classList.add("off");
+        g.style.display = "none";
+      } else {
+        row.classList.remove("off");
+        row.classList.add("on");
+        g.style.display = "";
+      }
     });
   });
 })();
