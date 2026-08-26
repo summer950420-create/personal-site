@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh" data-lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>地点 · Places — 李夏 Summer Li</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .places-head { border-bottom: 1px solid var(--line); }
+  .places-head .inner { max-width: var(--maxw); margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+</style>
+</head>
+<body>
+
+<header class="places-head">
+  <div class="inner">
+    <a class="brand" href="index.html">李夏<span class="cn">Summer Li</span></a>
+    <nav class="nav">
+      <a href="works.html"><span class="zh">作品</span><span class="en">Works</span></a>
+      <a href="writing.html"><span class="zh">观察</span><span class="en">Writing</span></a>
+      <a href="places.html" class="active"><span class="zh">地点</span><span class="en">Places</span></a>
+      <a href="index.html#about"><span class="zh">关于</span><span class="en">About</span></a>
+      <a href="mailto:summer950420@gmail.com"><span class="zh">联系</span><span class="en">Contact</span></a>
+      <button class="lang-toggle" type="button">EN</button>
+    </nav>
+  </div>
+</header>
+
+<div class="places-layout">
+  <!-- 左侧：地点目录 -->
+  <aside class="places-side">
+    <h2><span class="zh">地点档案</span><span class="en">Place Archive</span></h2>
+    <p class="hint">
+      <span class="zh">点击任意地点，地图会带你飞过去。</span>
+      <span class="en">Click a place — the map will fly you there.</span>
+    </p>
+    <ul class="place-list" id="place-list"></ul>
+  </aside>
+
+  <!-- 右侧：地图 -->
+  <div id="map">
+    <div class="map-controls">
+      <button type="button" id="btn-world"><span class="zh">回到世界</span><span class="en">World view</span></button>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  /* 地点数据：坐标、年份、照片、记录（中/英） */
+  var PLACES = [
+    {
+      id: "xian",
+      lat: 34.34, lng: 108.94,
+      name: { zh: "西安", en: "Xi'an" },
+      year: "2012 —",
+      img: "images/xian.png",
+      d: {
+        zh: "出生与求学的城市。本科在这里读建筑，城墙、三学街和在地商店是我的长期研究田野。",
+        en: "My hometown and the city of my architecture degree. The city wall, Sanxue Street and local shops are my long-term research field."
+      }
+    },
+    {
+      id: "shanghai",
+      lat: 31.23, lng: 121.47,
+      name: { zh: "上海", en: "Shanghai" },
+      year: "2021 —",
+      img: "images/shanghai.jpeg",
+      d: {
+        zh: "工作与生活的城市。大正、goa、长夏叙事都在这里生长。",
+        en: "Where I live and work — Dazheng, goa and Summer Narrative all grew here."
+      }
+    },
+    {
+      id: "neworleans",
+      lat: 29.95, lng: -90.07,
+      name: { zh: "新奥尔良", en: "New Orleans" },
+      year: "2019",
+      d: {
+        zh: "杜兰大学，建筑学硕士。一座让建筑回归城市与生活的城市。",
+        en: "Tulane University, M.Arch. A city where architecture returns to urban life."
+      }
+    },
+    {
+      id: "la",
+      lat: 34.05, lng: -118.24,
+      name: { zh: "洛杉矶", en: "Los Angeles" },
+      year: "2018 / 2025",
+      d: {
+        zh: "UCLA 夏校，也是美西大环线的起点。",
+        en: "UCLA summer school, and the start of the great Western US road trip."
+      }
+    },
+    {
+      id: "yellowstone",
+      lat: 44.43, lng: -110.59,
+      name: { zh: "黄石", en: "Yellowstone" },
+      year: "2025",
+      img: "images/route_west.jpg",
+      d: {
+        zh: "美西大环线：黄石、大提顿与66号公路上的夏天。",
+        en: "The great Western US loop — a summer through Yellowstone, Grand Teton and Route 66."
+      }
+    },
+    {
+      id: "vegas",
+      lat: 36.17, lng: -115.14,
+      name: { zh: "拉斯维加斯", en: "Las Vegas" },
+      year: "2025",
+      d: {
+        zh: "美西之路的第一夜。",
+        en: "First night of the Western road trip."
+      }
+    },
+    {
+      id: "jingmai",
+      lat: 22.12, lng: 100.02,
+      name: { zh: "景迈山", en: "Jingmai Mountain" },
+      year: "2026",
+      img: "images/yunnan.png",
+      d: {
+        zh: "云南行：色彩地理、干栏式民居与在地商业的田野记录。",
+        en: "Yunnan field notes — colour geography, stilt houses and local commerce."
+      }
+    },
+    {
+      id: "beijing",
+      lat: 39.90, lng: 116.40,
+      name: { zh: "北京", en: "Beijing" },
+      year: "2026",
+      img: "images/place_beijing.webp",
+      d: {
+        zh: "在京城洽谈一个内容合作项目，也为朋友做了一本北京指南。",
+        en: "A content collaboration in the capital, and a Beijing guide made for a friend."
+      }
+    },
+    {
+      id: "hangzhou",
+      lat: 30.27, lng: 120.15,
+      name: { zh: "杭州", en: "Hangzhou" },
+      year: "2023",
+      d: {
+        zh: "goa 大象设计，两本书和一年半的内容体系。",
+        en: "goa — two books and a content system built from zero."
+      }
+    },
+    {
+      id: "suzhou",
+      lat: 31.30, lng: 120.58,
+      name: { zh: "苏州", en: "Suzhou" },
+      year: "2025",
+      d: {
+        zh: "乌鹊桥68号改造项目，一次古城更新的投标。",
+        en: "Wujue Bridge No.68 renovation — a bid into old city renewal."
+      }
+    },
+    {
+      id: "phuket",
+      lat: 7.88, lng: 98.40,
+      name: { zh: "普吉岛", en: "Phuket" },
+      year: "2025",
+      img: "images/place_phuket.jpg",
+      d: {
+        zh: "为 Opal Ocean 美容院做空间设计，在热带的尺度里工作。",
+        en: "Interior design for Opal Ocean — working in tropical scale."
+      }
+    },
+    {
+      id: "xizhai",
+      lat: 34.30, lng: 108.70,
+      name: { zh: "西寨村", en: "Xizhai Village" },
+      year: "2025",
+      img: "images/place_xizhai.jpg",
+      d: {
+        zh: "《十年一味·思念常在》家族记忆展的发生地——一场用菜谱与采访搭起的展览。",
+        en: "Where 'A Taste of Ten Years' took place — a family memory exhibition built from recipes and interviews."
+      }
+    }
+  ];
+
+  /* 初始化地图：世界概览，浅色线条感瓦片 */
+  var map = L.map("map", { zoomControl: false, minZoom: 1.6, maxZoom: 16 }).setView([22, 40], 1.6);
+  L.control.zoom({ position: "bottomright" }).addTo(map);
+
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+    subdomains: "abcd",
+    maxZoom: 19
+  }).addTo(map);
+
+  map.attributionControl.setPrefix("");
+
+  /* 自定义标记：编号圆点 */
+  var markers = {};
+  PLACES.forEach(function (pl, i) {
+    var icon = L.divIcon({
+      className: "place-dot",
+      html: '<span>' + (i + 1) + '</span>',
+      iconSize: [26, 26],
+      iconAnchor: [13, 13]
+    });
+    var m = L.marker([pl.lat, pl.lng], { icon: icon }).addTo(map);
+
+    var popHtml =
+      (pl.img ? '<img src="' + pl.img + '" alt="' + pl.name.en + '">' : "") +
+      '<p class="pt">' + pl.name.en + " · " + pl.name.zh + '</p>' +
+      '<p class="pd">' + pl.d.zh + '</p>';
+
+    m.bindPopup(popHtml, { maxWidth: 280 });
+    m.on("click", function () {
+      map.flyTo([pl.lat, pl.lng], 9, { duration: 1.6 });
+      setTimeout(function () { m.openPopup(); }, 1700);
+    });
+    markers[pl.id] = m;
+  });
+
+  /* 左侧目录 */
+  var list = document.getElementById("place-list");
+  PLACES.forEach(function (pl, i) {
+    var li = document.createElement("li");
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.innerHTML =
+      '<span class="n">' + String(i + 1).padStart(2, "0") + '</span>' +
+      '<span class="p">' + pl.name.zh + '</span>';
+    btn.addEventListener("click", function () {
+      map.flyTo([pl.lat, pl.lng], 9, { duration: 1.6 });
+      setTimeout(function () { markers[pl.id].openPopup(); }, 1700);
+    });
+    li.appendChild(btn);
+    list.appendChild(li);
+  });
+
+  /* 回到世界 */
+  document.getElementById("btn-world").addEventListener("click", function () {
+    map.flyTo([22, 40], 1.6, { duration: 1.8 });
+  });
+
+  /* 语言切换（与全站一致） */
+  var lang = localStorage.getItem("site-lang") || "zh";
+  document.documentElement.setAttribute("data-lang", lang);
+  var t = document.querySelector(".lang-toggle");
+  t.textContent = lang === "zh" ? "EN" : "中文";
+  t.addEventListener("click", function () {
+    var next = document.documentElement.getAttribute("data-lang") === "zh" ? "en" : "zh";
+    document.documentElement.setAttribute("data-lang", next);
+    localStorage.setItem("site-lang", next);
+    t.textContent = next === "zh" ? "EN" : "中文";
+  });
+})();
+</script>
+<style>
+  .place-dot {
+    background: var(--ink);
+    border-radius: 50%;
+    color: #fff;
+    font-family: var(--sans);
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+  }
+  @media (max-width: 760px) {
+    .places-layout { grid-template-columns: 1fr; height: auto; }
+    #map { height: 55vh; }
+  }
+</style>
+<script src="js/main.js"></script>
+</body>
+</html>
