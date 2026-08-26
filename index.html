@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>李夏 · Summer Li — 李夏的世界</title>
+<title>李夏 · Summer Li — 把复杂价值变成公众叙事</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body data-layers="shape">
+<body>
 
 <header class="site-head">
   <div class="inner">
@@ -22,354 +22,153 @@
   </div>
 </header>
 
-<!-- 世界的平面图 -->
-<section class="plan-world">
-  <p class="kicker"><span class="zh">李夏的世界 · 设定集</span><span class="en">The World of Summer Li · Setting Book</span></p>
-  <h1><span class="zh">一张平面图，<br>打开我的世界。</span><span class="en">A plan,<br>opening my world.</span></h1>
-  <p class="sub">
-    <span class="zh">这个世界按五个因素理解：形状、色彩、材质、尺度、文化。用右侧的开关，一层层把它打开。</span>
-    <span class="en">This world is understood through five factors: shape, colour, material, scale, culture. Open them layer by layer.</span>
-  </p>
-
-  <div class="studio-layout">
-    <!-- 图纸画布 -->
-    <div class="plan-canvas">
-      <svg viewBox="0 0 800 620" class="plan-svg" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="pat-wood" width="18" height="10" patternUnits="userSpaceOnUse">
-            <rect width="18" height="10" fill="#eef3ec"/>
-            <path d="M0 5 H18" stroke="#c8d2c2" stroke-width="0.7"/>
-          </pattern>
-          <pattern id="pat-brick" width="22" height="11" patternUnits="userSpaceOnUse">
-            <rect width="22" height="11" fill="#f5e9e6"/>
-            <path d="M0 5.5 H22 M5.5 0 V11 M16.5 0 V11" stroke="#e0cbc3" stroke-width="0.7"/>
-          </pattern>
-          <pattern id="pat-dot" width="12" height="12" patternUnits="userSpaceOnUse">
-            <rect width="12" height="12" fill="#f0eaf4"/>
-            <circle cx="3" cy="3" r="0.9" fill="#d3c8dc"/>
-            <circle cx="9" cy="9" r="0.9" fill="#d3c8dc"/>
-          </pattern>
-          <pattern id="pat-slash" width="12" height="12" patternUnits="userSpaceOnUse">
-            <rect width="12" height="12" fill="#fdf3dc"/>
-            <path d="M0 12 L12 0" stroke="#ead9ae" stroke-width="0.8"/>
-          </pattern>
-          <pattern id="pat-grid" width="16" height="16" patternUnits="userSpaceOnUse">
-            <rect width="16" height="16" fill="#e8eef5"/>
-            <path d="M0 8 H16 M8 0 V16" stroke="#c9d6e2" stroke-width="0.6"/>
-          </pattern>
-          <pattern id="pat-grass" width="14" height="14" patternUnits="userSpaceOnUse">
-            <rect width="14" height="14" fill="#e9f0e4"/>
-            <path d="M3 10 L3 4 M7 10 L7 4 M11 10 L11 4" stroke="#c4d3ba" stroke-width="0.8"/>
-          </pattern>
-        </defs>
-
-        <!-- 图层 02 色彩 -->
-        <g data-layer="color" style="display:none">
-          <rect x="49" y="29" width="211" height="143" fill="#f2ede4"/>
-          <rect x="268" y="29" width="244" height="143" fill="url(#pat-grid)"/>
-          <rect x="528" y="29" width="224" height="143" fill="#f5e9e6"/>
-          <rect x="49" y="196" width="203" height="176" fill="#eef3ec"/>
-          <rect x="268" y="196" width="324" height="176" fill="#f0eaf4"/>
-          <rect x="608" y="196" width="144" height="176" fill="#fdf3dc"/>
-          <rect x="49" y="388" width="703" height="184" fill="url(#pat-grass)"/>
-        </g>
-
-        <!-- 图层 03 材质 -->
-        <g data-layer="material" style="display:none">
-          <rect x="268" y="29" width="244" height="143" fill="url(#pat-grid)"/>
-          <rect x="528" y="29" width="224" height="143" fill="url(#pat-brick)"/>
-          <rect x="49" y="196" width="203" height="176" fill="url(#pat-wood)"/>
-          <rect x="268" y="196" width="324" height="176" fill="url(#pat-dot)"/>
-          <rect x="608" y="196" width="144" height="176" fill="url(#pat-slash)"/>
-          <rect x="49" y="388" width="703" height="184" fill="url(#pat-grass)"/>
-        </g>
-
-        <!-- 图层 01 形状：墙、门、窗 -->
-        <g data-layer="shape">
-          <rect x="40" y="20" width="720" height="580" fill="none" stroke="#1a1a1a" stroke-width="2.4"/>
-          <rect x="49" y="29" width="702" height="562" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
-          <rect x="49" y="180" width="702" height="8" fill="#1a1a1a"/>
-          <rect x="260" y="29" width="8" height="351" fill="#1a1a1a"/>
-          <rect x="520" y="29" width="8" height="151" fill="#1a1a1a"/>
-          <rect x="600" y="196" width="8" height="176" fill="#1a1a1a"/>
-          <rect x="268" y="388" width="484" height="8" fill="#1a1a1a"/>
-          <!-- 院子边界（虚线） -->
-          <path d="M49 388 H752" stroke="#1a1a1a" stroke-width="1.6" stroke-dasharray="7 5" fill="none"/>
-
-          <!-- 门洞（白盖） -->
-          <rect x="292" y="180" width="34" height="8" fill="#fbfbf7"/>
-          <rect x="558" y="180" width="34" height="8" fill="#fbfbf7"/>
-          <rect x="260" y="270" width="8" height="34" fill="#fbfbf7"/>
-          <rect x="372" y="388" width="34" height="8" fill="#fbfbf7"/>
-          <rect x="608" y="296" width="8" height="34" fill="#fbfbf7"/>
-          <rect x="120" y="29" width="8" height="34" fill="#fbfbf7"/>
-
-          <!-- 门扇弧线 -->
-          <path d="M292 184 a34 34 0 0 1 34 0" stroke="#1a1a1a" stroke-width="0.9" fill="none"/>
-          <path d="M558 184 a34 34 0 0 1 34 0" stroke="#1a1a1a" stroke-width="0.9" fill="none"/>
-          <path d="M268 270 a34 34 0 0 1 0 34" stroke="#1a1a1a" stroke-width="0.9" fill="none"/>
-          <path d="M372 392 a34 34 0 0 1 34 0" stroke="#1a1a1a" stroke-width="0.9" fill="none"/>
-          <path d="M612 296 a34 34 0 0 1 0 34" stroke="#1a1a1a" stroke-width="0.9" fill="none"/>
-          <path d="M124 29 a34 34 0 0 1 0 34" stroke="#1a1a1a" stroke-width="0.9" fill="none"/>
-
-          <!-- 窗 -->
-          <path d="M70 150 h80 M70 156 h80 M70 162 h80" stroke="#1a1a1a" stroke-width="0.8"/>
-          <path d="M640 52 h80 M640 58 h80 M640 64 h80" stroke="#1a1a1a" stroke-width="0.8"/>
-          <path d="M70 470 h90 M70 476 h90" stroke="#1a1a1a" stroke-width="0.8"/>
-        </g>
-
-        <!-- 图层 05 文化：家具与物件 -->
-        <g data-layer="culture" style="display:none">
-          <!-- 前厅：地毯 + 立伞 -->
-          <rect x="110" y="90" width="70" height="50" rx="4" fill="none" stroke="#8a8a8a" stroke-width="0.8"/>
-          <circle cx="172" cy="70" r="6" fill="none" stroke="#8a8a8a" stroke-width="0.9"/>
-          <line x1="172" y1="76" x2="172" y2="92" stroke="#8a8a8a" stroke-width="0.9"/>
-          <!-- 会客厅：沙发 + 茶几 -->
-          <rect x="300" y="60" width="70" height="22" rx="3" fill="none" stroke="#8a8a8a" stroke-width="1"/>
-          <rect x="296" y="52" width="8" height="22" rx="2" fill="none" stroke="#8a8a8a" stroke-width="1"/>
-          <rect x="366" y="52" width="8" height="22" rx="2" fill="none" stroke="#8a8a8a" stroke-width="1"/>
-          <rect x="322" y="96" width="26" height="10" rx="5" fill="none" stroke="#8a8a8a" stroke-width="0.9"/>
-          <!-- 档案室：书架 + 桌 + 盒子 -->
-          <rect x="548" y="48" width="70" height="44" fill="none" stroke="#8a8a8a" stroke-width="1"/>
-          <line x1="566" y1="48" x2="566" y2="92" stroke="#8a8a8a" stroke-width="0.7"/>
-          <line x1="584" y1="48" x2="584" y2="92" stroke="#8a8a8a" stroke-width="0.7"/>
-          <line x1="602" y1="48" x2="602" y2="92" stroke="#8a8a8a" stroke-width="0.7"/>
-          <line x1="548" y1="70" x2="618" y2="70" stroke="#8a8a8a" stroke-width="0.7"/>
-          <rect x="556" y="106" width="46" height="16" fill="none" stroke="#8a8a8a" stroke-width="0.9"/>
-          <rect x="620" y="102" width="12" height="12" fill="none" stroke="#8a8a8a" stroke-width="0.9"/>
-          <rect x="636" y="102" width="12" height="12" fill="none" stroke="#8a8a8a" stroke-width="0.9"/>
-          <!-- 书房：书桌 + 椅 + 书架 -->
-          <rect x="80" y="240" width="60" height="18" fill="none" stroke="#8a8a8a" stroke-width="1"/>
-          <rect x="92" y="258" width="6" height="10" fill="none" stroke="#8a8a8a" stroke-width="0.9"/>
-          <rect x="122" y="258" width="6" height="10" fill="none" stroke="#8a8a8a" stroke-width="0.9"/>
-          <circle cx="144" cy="232" r="9" fill="none" stroke="#8a8a8a" stroke-width="0.9"/>
-          <rect x="170" y="226" width="48" height="40" fill="none" stroke="#8a8a8a" stroke-width="1"/>
-          <line x1="170" y1="246" x2="218" y2="246" stroke="#8a8a8a" stroke-width="0.7"/>
-          <line x1="186" y1="226" x2="186" y2="266" stroke="#8a8a8a" stroke-width="0.7"/>
-          <line x1="202" y1="226" x2="202" y2="266" stroke="#8a8a8a" stroke-width="0.7"/>
-          <!-- 展厅：挂画 + 展台 -->
-          <rect x="300" y="230" width="34" height="26" fill="none" stroke="#8a8a8a" stroke-width="1"/>
-          <rect x="344" y="240" width="34" height="26" fill="none" stroke="#8a8a8a" stroke-width="1"/>
-          <rect x="388" y="218" width="60" height="60" fill="none" stroke="#8a8a8a" stroke-width="1.1"/>
-          <rect x="430" y="300" width="70" height="8" fill="#8a8a8a"/>
-          <!-- 放映室：放映机 + 银幕 -->
-          <path d="M640 260 l16 -16 h28 l16 16 z" fill="none" stroke="#8a8a8a" stroke-width="1"/>
-          <circle cx="670" cy="252" r="3.5" fill="#8a8a8a"/>
-          <rect x="644" y="290" width="70" height="40" fill="none" stroke="#8a8a8a" stroke-width="0.9"/>
-          <!-- 院子：树 + 长椅 + 花灯 -->
-          <circle cx="170" cy="470" r="16" fill="none" stroke="#8a8a8a" stroke-width="1"/>
-          <line x1="170" y1="486" x2="170" y2="512" stroke="#8a8a8a" stroke-width="1.1"/>
-          <rect x="380" y="480" width="60" height="10" rx="3" fill="none" stroke="#8a8a8a" stroke-width="1"/>
-          <rect x="392" y="490" width="6" height="10" fill="none" stroke="#8a8a8a" stroke-width="0.9"/>
-          <rect x="422" y="490" width="6" height="10" fill="none" stroke="#8a8a8a" stroke-width="0.9"/>
-          <line x1="640" y1="470" x2="640" y2="500" stroke="#8a8a8a" stroke-width="1.1"/>
-          <path d="M632 470 l8 -10 l8 10 z" fill="#8a8a8a"/>
-        </g>
-
-        <!-- 图层 04 尺度：标注、尺寸、指北针、比例尺、图名 -->
-        <g data-layer="scale" style="display:none">
-          <!-- 房间名 + 面积 -->
-          <text x="70" y="70" font-size="13" font-weight="700" fill="#1a1a1a">前厅</text>
-          <text x="70" y="86" font-size="9" fill="#8a8a8a">12.6 ㎡</text>
-          <text x="300" y="52" font-size="13" font-weight="700" fill="#1a1a1a">会客厅</text>
-          <text x="300" y="68" font-size="9" fill="#8a8a8a">27.4 ㎡</text>
-          <text x="560" y="52" font-size="13" font-weight="700" fill="#1a1a1a">档案室</text>
-          <text x="560" y="68" font-size="9" fill="#8a8a8a">25.1 ㎡</text>
-          <text x="70" y="232" font-size="13" font-weight="700" fill="#1a1a1a">书房</text>
-          <text x="70" y="248" font-size="9" fill="#8a8a8a">22.8 ㎡</text>
-          <text x="300" y="232" font-size="13" font-weight="700" fill="#1a1a1a">展厅</text>
-          <text x="300" y="248" font-size="9" fill="#8a8a8a">36.3 ㎡</text>
-          <text x="620" y="232" font-size="13" font-weight="700" fill="#1a1a1a">放映室</text>
-          <text x="620" y="248" font-size="9" fill="#8a8a8a">16.2 ㎡</text>
-          <text x="70" y="432" font-size="13" font-weight="700" fill="#1a1a1a">院子</text>
-          <text x="70" y="448" font-size="9" fill="#8a8a8a">92.1 ㎡ · 室外</text>
-
-          <!-- 标高 -->
-          <text x="640" y="580" font-size="9" fill="#8a8a8a">±0.000</text>
-
-          <!-- 尺寸线 -->
-          <line x1="40" y1="14" x2="760" y2="14" stroke="#8a8a8a" stroke-width="0.7"/>
-          <line x1="40" y1="10" x2="40" y2="18" stroke="#8a8a8a" stroke-width="0.7"/>
-          <line x1="760" y1="10" x2="760" y2="18" stroke="#8a8a8a" stroke-width="0.7"/>
-          <text x="390" y="10" font-size="9" fill="#8a8a8a" text-anchor="middle">7200</text>
-
-          <!-- 指北针 -->
-          <g transform="translate(736,60)">
-            <circle r="14" fill="none" stroke="#1a1a1a" stroke-width="0.9"/>
-            <path d="M0 -9 L4 5 L0 2 L-4 5 Z" fill="#1a1a1a"/>
-            <text y="-18" font-size="9" text-anchor="middle" fill="#1a1a1a">N</text>
-          </g>
-
-          <!-- 比例尺 -->
-          <g transform="translate(560,600)">
-            <rect x="0" y="-4" width="40" height="4" fill="#1a1a1a"/>
-            <rect x="40" y="-4" width="40" height="4" fill="none" stroke="#1a1a1a" stroke-width="1"/>
-            <text x="0" y="8" font-size="8" fill="#8a8a8a">0</text>
-            <text x="40" y="8" font-size="8" fill="#8a8a8a">2.5m</text>
-            <text x="80" y="8" font-size="8" fill="#8a8a8a">5m</text>
-          </g>
-
-          <!-- 图名 -->
-          <text x="700" y="598" font-size="11" font-weight="700" fill="#1a1a1a" text-anchor="end">李夏的世界 · 叙事工作室平面图</text>
-          <text x="700" y="610" font-size="8" fill="#8a8a8a" text-anchor="end">NARRATIVE STUDIO PLAN · 1:100</text>
-        </g>
-      </svg>
-    </div>
-
-    <!-- Adobe 式图层面板 -->
-    <aside class="layers-panel">
-      <div class="phead"><span><span class="zh">图层面板</span><span class="en">LAYERS</span></span><span class="cnt">5</span></div>
-
-      <div class="layer-row on" data-layer="shape">
-        <span class="eye"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="2.6"/></svg></span>
-        <span class="thumb"><svg viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="1.6"><rect x="3" y="3" width="18" height="18"/><path d="M3 9h18M9 3v18"/></svg></span>
-        <span><span class="nm"><span class="zh">形状</span><span class="en">Shape</span></span><br><span class="en">WALLS &amp; DOORS</span></span>
-        <span class="tag">01</span>
-      </div>
-
-      <div class="layer-row off" data-layer="color">
-        <span class="eye"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="2.6"/></svg></span>
-        <span class="thumb"><svg viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="1.6"><rect x="3" y="3" width="8" height="8" fill="#e8eef5"/><rect x="13" y="3" width="8" height="8" fill="#f5e9e6"/><rect x="3" y="13" width="8" height="8" fill="#eef3ec"/><rect x="13" y="13" width="8" height="8" fill="#fdf3dc"/></svg></span>
-        <span><span class="nm"><span class="zh">色彩</span><span class="en">Colour</span></span><br><span class="en">ROOM TONES</span></span>
-        <span class="tag">02</span>
-      </div>
-
-      <div class="layer-row off" data-layer="material">
-        <span class="eye"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="2.6"/></svg></span>
-        <span class="thumb"><svg viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="1.2"><path d="M3 8h18M3 16h18"/></svg></span>
-        <span><span class="nm"><span class="zh">材质</span><span class="en">Material</span></span><br><span class="en">TEXTURES</span></span>
-        <span class="tag">03</span>
-      </div>
-
-      <div class="layer-row off" data-layer="scale">
-        <span class="eye"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="2.6"/></svg></span>
-        <span class="thumb"><svg viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="1.6"><line x1="3" y1="14" x2="21" y2="14"/><line x1="3" y1="10" x2="3" y2="18"/><line x1="21" y1="10" x2="21" y2="18"/></svg></span>
-        <span><span class="nm"><span class="zh">尺度</span><span class="en">Scale</span></span><br><span class="en">DIMENSIONS</span></span>
-        <span class="tag">04</span>
-      </div>
-
-      <div class="layer-row off" data-layer="culture">
-        <span class="eye"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="2.6"/></svg></span>
-        <span class="thumb"><svg viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="1.6"><rect x="6" y="10" width="12" height="9"/><path d="M9 10V7h6v3"/></svg></span>
-        <span><span class="nm"><span class="zh">文化</span><span class="en">Culture</span></span><br><span class="en">FURNITURE &amp; OBJECTS</span></span>
-        <span class="tag">05</span>
-      </div>
-    </aside>
-  </div>
-</div>
-</section>
-
-<!-- 前厅：序言 -->
-<section class="preface reveal" id="preface">
-  <div class="talk">
-    <span class="zh">
-      你好，我是李夏。<br>
-      建筑学出身，做过建筑媒体，现在做独立的内容工作。<br>
-      这些年我做过的事只有一件：<em>把复杂的东西，讲成听得懂的故事</em>——<br>
-      帮设计机构把思考变成万人关注的账号，<br>
-      帮事务所把项目讲进国际奖项的短名单，<br>
-      也给自己奶奶办过一场关于味道的展览。<br>
-      如果你也有一件复杂的事，想被讲清楚，<br>
-      我们聊聊。
-    </span>
-    <span class="en">
-      Hello, I'm Summer.<br>
-      Architecture-trained, media-born, now working independently.<br>
-      For years I have been doing one thing: <em>turning complex things into stories people can hear</em> —<br>
-      growing a design practice's account to ten thousand followers,<br>
-      carrying projects into international award shortlists,<br>
-      and curating an exhibition about my grandmother's cooking.<br>
-      If you have something complex that deserves a story,<br>
-      let's talk.
-    </span>
-    <div class="nums">
-      <div class="cell"><span class="zh">期大师工作室视频</span><span class="en">Studio visits</span><b>10</b></div>
-      <div class="cell"><span class="zh">小红书粉丝从零起步</span><span class="en">Followers from zero</span><b>1W+</b></div>
-      <div class="cell"><span class="zh">场高管演讲支持</span><span class="en">Keynote supports</span><b>20+</b></div>
-      <div class="cell"><span class="zh">服务过的项目与品牌</span><span class="en">Projects served</span><b>60+</b></div>
-    </div>
-  </div>
-  <div>
-    <div class="frame"><img src="images/studio_arata.jpg" alt="大师工作室 · 矶崎新"></div>
-    <p class="cap"><span class="zh">大师工作室 · 第 01 期 · 矶崎新</span><span class="en">Studio Visits No.01 · Arata Isozaki</span></p>
-  </div>
-</section>
-
-<!-- 会客厅：世界观 -->
-<section class="chapter tint reveal" id="worldview">
-  <div class="ch-head">
-    <span class="no">01</span>
-    <span class="t"><span class="zh">世界观</span><span class="en">Worldview</span></span>
-    <span class="en">WHAT NARRATIVE IS</span>
-  </div>
-  <div class="wrap">
-    <div class="talk" style="font-size:clamp(18px,2.2vw,24px);font-weight:500;line-height:1.9;max-width:32em;">
+<!-- 展墙：前言 -->
+<section class="wall">
+  <div class="wall-head">
+    <p class="kicker"><span class="zh">一场展览 · 李夏的世界</span><span class="en">An Exhibition · The World of Summer Li</span></p>
+    <h1>
+      <span class="zh">把复杂价值，<br>变成公众叙事。</span>
+      <span class="en">Turning complex value<br>into public narrative.</span>
+    </h1>
+    <p class="curator">
       <span class="zh">
-        <em>叙事不是修饰，叙事是结构。</em><br>
-        一栋楼立得住，因为承重墙诚实；一个故事立得住，因为内部结构清晰。<br>
+        这里展出的不是作品，是我理解世界的方式。<br>
         我的工作是翻译：把专业语言翻成公众语言，把私人记忆翻成公共记忆，<br>
-        把一座城市的剖面、一个人的一生，翻成可以被看见的图层。
+        把一座城市的剖面、一个人的一生，翻成<em>可以被看见的图层</em>。<br>
+        点击墙上的每一幅展品，走进一段故事。
       </span>
       <span class="en">
-        <em>Narrative is not decoration — narrative is structure.</em><br>
-        A building stands because its load-bearing walls are honest; a story stands because its inner structure is clear.<br>
+        What hangs here is not my work — it is the way I read the world.<br>
         My work is translation: professional language into public language, private memory into shared memory,<br>
-        a city's section or a person's life into layers that can be seen.
+        a city's section, or a life, into <em>layers that can be seen</em>.<br>
+        Click any piece on the wall to step into a story.
       </span>
-    </div>
+    </p>
+    <p class="sign"><span class="zh">—— 策展人 · 李夏</span><span class="en">— Curated by Summer Li</span></p>
   </div>
-</section>
 
-<!-- 放映室：视频 -->
-<section class="chapter reveal" id="video">
-  <div class="ch-head">
-    <span class="no">05</span>
-    <span class="t"><span class="zh">放映室</span><span class="en">Projection</span></span>
-    <span class="en">VIDEO · STUDIO VISITS</span>
-  </div>
-  <div class="video-block">
-    <video controls poster="images/studio_arata.jpg">
-      <source src="images/studio_arata.m4v" type="video/mp4">
-    </video>
-    <p class="cap"><span class="zh">大师工作室 · 第 01 期 · 矶崎新</span><span class="en">Studio Visits No.01 · Arata Isozaki</span></p>
-  </div>
-</section>
+  <!-- 展墙主体 -->
+  <div class="wall-body">
 
-<!-- 院子：正在发生 -->
-<section class="chapter tint reveal" id="now">
-  <div class="ch-head">
-    <span class="no">06</span>
-    <span class="t"><span class="zh">正在发生</span><span class="en">Now</span></span>
-    <span class="en">STORIES IN PROGRESS</span>
-  </div>
-  <div class="wrap">
-    <ul class="serial">
-      <li><span class="no">01</span><span class="t"><span class="zh">THE FOLIA · 世界建筑节 2026 演讲支持</span><span class="en">THE FOLIA · WAF 2026 keynote</span></span><span class="meta">2026</span></li>
-      <li><span class="no">02</span><span class="t"><span class="zh">国际建筑事务所 · 2026–2028 内容与传播计划</span><span class="en">International practice · content plan</span></span><span class="meta">2026</span></li>
-      <li><span class="no">03</span><span class="t"><span class="zh">城市研究 · 西安城墙与在地商业</span><span class="en">Urban research · Xi'an wall &amp; local commerce</span></span><span class="meta">2026</span></li>
-      <li><span class="no">04</span><span class="t"><span class="zh">大师工作室系列 · 第 06–10 期拍摄中</span><span class="en">Studio visits · No.06–10 in production</span></span><span class="meta">2026</span></li>
-    </ul>
-    <div class="nums" style="margin-top:60px;display:flex;gap:50px;flex-wrap:wrap;">
-      <div class="cell" style="font-size:11px;color:var(--gray);letter-spacing:0.14em;text-transform:uppercase;">
-        <span class="zh">写信给我</span><span class="en">Write to me</span>
-        <b style="display:block;font-size:17px;font-weight:600;color:var(--ink);letter-spacing:-0.01em;margin-top:6px;text-transform:none;">
-          <a href="mailto:summer950420@gmail.com" style="text-decoration:none;border-bottom:2px solid var(--accent);padding-bottom:2px;">summer950420@gmail.com</a>
-        </b>
+    <!-- 展区 A -->
+    <div class="zone">
+      <div class="zone-head">
+        <span class="no">A</span>
+        <span class="t"><span class="zh">讲故事的人</span><span class="en">Storytellers</span></span>
+        <span class="en">OTHERS' STORIES</span>
       </div>
-      <div class="cell" style="font-size:11px;color:var(--gray);letter-spacing:0.14em;text-transform:uppercase;">
-        <span class="zh">小红书</span><span class="en">Xiaohongshu</span>
-        <b style="display:block;font-size:17px;font-weight:600;color:var(--ink);letter-spacing:-0.01em;margin-top:6px;text-transform:none;">SUMMER四二零</b>
+      <div class="gallery">
+        <a class="exh" href="works.html">
+          <div class="frame"><img src="images/studio_arata.jpg" alt="大师工作室 · 矶崎新"></div>
+          <div class="plate"><p class="no">EXH.01</p><p class="t">大师工作室 · 矶崎新</p><p class="m">VIDEO · 2026</p></div>
+        </a>
+        <a class="exh" href="roles.html">
+          <div class="frame" style="padding-bottom:26px;min-height:180px;display:flex;align-items:center;justify-content:center;background:#e8eef5;">
+            <p style="font-size:15px;font-weight:700;letter-spacing:0.04em;color:#1a1a1a;">角色档案<br><span style="font-size:11px;font-weight:400;color:#666;letter-spacing:0.14em;">CHAR.01 — 06</span></p>
+          </div>
+          <div class="plate"><p class="no">EXH.02</p><p class="t"><span class="zh">档案室 · 角色</span><span class="en">Archive · Roles</span></p><p class="m">PEOPLE · 2026</p></div>
+        </a>
+        <a class="exh" href="works.html">
+          <div class="frame" style="padding-bottom:26px;min-height:220px;display:flex;align-items:center;justify-content:center;background:#1a1a1a;">
+            <p style="font-size:14px;font-weight:700;letter-spacing:0.1em;color:#fff;">THE FOLIA<br><span style="font-size:10px;font-weight:400;color:#999;letter-spacing:0.16em;">WAF 2026</span></p>
+          </div>
+          <div class="plate"><p class="no">EXH.03</p><p class="t"><span class="zh">一座高楼的演讲</span><span class="en">A Tower's Speech</span></p><p class="m">PROJECT · 2026</p></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 展区 B -->
+    <div class="zone">
+      <div class="zone-head">
+        <span class="no">B</span>
+        <span class="t"><span class="zh">我的故事</span><span class="en">My Stories</span></span>
+        <span class="en">MEMORY &amp; JOURNEY</span>
+      </div>
+      <div class="gallery">
+        <a class="exh" href="shi-nian-yi-wei.html">
+          <div class="frame"><img src="images/memorial.jpg" alt="十年一味 · 展览"></div>
+          <div class="plate"><p class="no">EXH.04</p><p class="t">十年一味 · 思念常在</p><p class="m">ESSAY · 2025</p></div>
+        </a>
+        <a class="exh" href="places.html">
+          <div class="frame"><img src="images/route_west.jpg" alt="美西大环线"></div>
+          <div class="plate"><p class="no">EXH.05</p><p class="t"><span class="zh">美西大环线</span><span class="en">US West Loop</span></p><p class="m">JOURNEY · 2025</p></div>
+        </a>
+        <a class="exh" href="places.html">
+          <div class="frame"><img src="images/yunnan.png" alt="云南 · 景迈山"></div>
+          <div class="plate"><p class="no">EXH.06</p><p class="t"><span class="zh">云南的色彩地理</span><span class="en">Colour Geography</span></p><p class="m">FIELD NOTES · 2026</p></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 展区 C -->
+    <div class="zone">
+      <div class="zone-head">
+        <span class="no">C</span>
+        <span class="t"><span class="zh">城市的剖面</span><span class="en">City Sections</span></span>
+        <span class="en">OBSERVATION &amp; RESEARCH</span>
+      </div>
+      <div class="gallery">
+        <a class="exh" href="writing.html">
+          <div class="frame" style="padding-bottom:26px;min-height:200px;display:flex;align-items:center;justify-content:center;background:#f2ede4;">
+            <p style="font-size:15px;font-weight:700;letter-spacing:0.04em;color:#1a1a1a;">观察 · 写作<br><span style="font-size:11px;font-weight:400;color:#666;letter-spacing:0.14em;">FIVE SERIES</span></p>
+          </div>
+          <div class="plate"><p class="no">EXH.07</p><p class="t"><span class="zh">我理解世界的角度</span><span class="en">How I Read the World</span></p><p class="m">WRITING · ONGOING</p></div>
+        </a>
+        <a class="exh" href="places.html">
+          <div class="frame"><img src="images/xian.png" alt="西安研究"></div>
+          <div class="plate"><p class="no">EXH.08</p><p class="t"><span class="zh">西安 · 城墙与在地</span><span class="en">Xi'an · Wall &amp; Local</span></p><p class="m">RESEARCH · ONGOING</p></div>
+        </a>
+        <a class="exh" href="places.html">
+          <div class="frame"><img src="images/place_beijing.webp" alt="地点地图"></div>
+          <div class="plate"><p class="no">EXH.09</p><p class="t"><span class="zh">走过的地方</span><span class="en">Places</span></p><p class="m">MAP · INTERACTIVE</p></div>
+        </a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- 诗行 -->
-<section class="plan-poem reveal">
+<section class="plan-poem reveal" style="background:#fff;">
   <p class="line">
     <span>图层</span><span class="sep">·</span><span>形制</span><span class="sep">·</span><span>风格</span><span class="sep">·</span><span>时刻</span><span class="sep">·</span><span>视角</span><span class="sep">·</span><span>速度</span>
   </p>
   <p class="foot"><span class="zh">我按这些词理解世界</span><span class="en">these are the words I read the world by</span></p>
+</section>
+
+<!-- 关于与联系 -->
+<section class="section reveal" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <p class="t">
+          <span class="zh">你好，我是李夏。建筑学出身，做过建筑媒体，现在做独立的内容工作。帮设计机构把思考变成万人关注的账号，帮事务所把项目讲进国际奖项的短名单，也给自己奶奶办过一场关于味道的展览。</span>
+          <span class="en">Hello, I'm Summer. Architecture-trained, media-born, now working independently — growing accounts, carrying projects into award shortlists, and curating exhibitions about my grandmother's cooking.</span>
+        </p>
+        <p class="p">
+          <span class="zh">如果你也有一件复杂的事，想被讲清楚，我们聊聊。</span>
+          <span class="en">If you have something complex that deserves a story, let's talk.</span>
+        </p>
+        <div class="nums" style="margin-top:34px;display:flex;gap:48px;flex-wrap:wrap;">
+          <div class="cell" style="font-size:11px;color:var(--gray);letter-spacing:0.14em;text-transform:uppercase;"><span class="zh">期工作室视频</span><span class="en">Studio visits</span><b>10</b></div>
+          <div class="cell" style="font-size:11px;color:var(--gray);letter-spacing:0.14em;text-transform:uppercase;"><span class="zh">粉丝从零起步</span><span class="en">Followers</span><b>1W+</b></div>
+          <div class="cell" style="font-size:11px;color:var(--gray);letter-spacing:0.14em;text-transform:uppercase;"><span class="zh">演讲支持</span><span class="en">Keynotes</span><b>20+</b></div>
+          <div class="cell" style="font-size:11px;color:var(--gray);letter-spacing:0.14em;text-transform:uppercase;"><span class="zh">服务项目</span><span class="en">Projects</span><b>60+</b></div>
+        </div>
+      </div>
+      <div>
+        <ul class="serial" style="padding:0;">
+          <li><span class="no">01</span><span class="t"><span class="zh">THE FOLIA · WAF 2026 演讲支持</span><span class="en">THE FOLIA · WAF keynote</span></span><span class="meta">2026</span></li>
+          <li><span class="no">02</span><span class="t"><span class="zh">国际建筑事务所 · 内容与传播计划</span><span class="en">International practice · content plan</span></span><span class="meta">2026</span></li>
+          <li><span class="no">03</span><span class="t"><span class="zh">西安城墙与在地商业 · 城市研究</span><span class="en">Xi'an wall · urban research</span></span><span class="meta">2026</span></li>
+          <li><span class="no">04</span><span class="t"><span class="zh">大师工作室系列 · 第 06–10 期拍摄中</span><span class="en">Studio visits · No.06–10</span></span><span class="meta">2026</span></li>
+        </ul>
+        <div style="margin-top:40px;">
+          <a href="mailto:summer950420@gmail.com" style="font-size:16px;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--accent);padding-bottom:2px;">summer950420@gmail.com</a>
+          <p style="margin-top:10px;font-size:12px;color:var(--gray);letter-spacing:0.1em;">小红书 · SUMMER四二零</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <footer class="site-foot">
