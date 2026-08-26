@@ -44,3 +44,19 @@
   }, { threshold: 0.12 });
   items.forEach(function (el) { io.observe(el); });
 })();
+
+/* ---------- 图层面板交互（首页） ---------- */
+(function () {
+  var layers = document.querySelectorAll(".layer input");
+  if (!layers.length) return;
+  var cur = document.body.getAttribute("data-layers") || "";
+  var set = new Set(cur.split(/\s+/).filter(Boolean));
+  layers.forEach(function (inp) {
+    inp.checked = set.has(inp.value);
+    inp.addEventListener("change", function () {
+      if (inp.checked) set.add(inp.value);
+      else set.delete(inp.value);
+      document.body.setAttribute("data-layers", Array.from(set).join(" "));
+    });
+  });
+})();
