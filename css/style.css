@@ -444,3 +444,66 @@ img { display: block; }
 .exh .plate .no { font-size: 10px; color: var(--gray); letter-spacing: 0.16em; }
 .exh .plate .t { font-size: 13.5px; font-weight: 700; margin-top: 3px; letter-spacing: -0.005em; }
 .exh .plate .m { font-size: 10.5px; color: var(--gray); margin-top: 2px; letter-spacing: 0.06em; }
+
+/* ============ 展墙：整面墙的版面 ============ */
+.wall-intro {
+  max-width: var(--maxw); margin: 0 auto;
+  padding: 130px 28px 110px;
+}
+.wall-intro .num { font-size: 12px; color: var(--accent); font-weight: 700; letter-spacing: 0.3em; }
+.wall-intro h1 {
+  font-weight: 900; letter-spacing: -0.04em;
+  font-size: clamp(64px, 11vw, 132px); line-height: 0.98;
+  margin: 26px 0 0;
+}
+.wall-intro .subline {
+  margin-top: 30px; font-size: clamp(17px, 2vw, 22px); font-weight: 600;
+  letter-spacing: 0.02em; max-width: 24em;
+}
+.wall-intro .preface {
+  margin-top: 48px; max-width: 34em;
+  font-size: 16.5px; line-height: 2.1; color: var(--gray);
+}
+.wall-intro .sign { margin-top: 26px; font-size: 12px; color: var(--ink); letter-spacing: 0.2em; }
+
+/* 展板：图文混排整幅版面 */
+.panel { padding: 130px 0; }
+.panel.alt { background: #f3f1ec; }
+.panel .p-in { max-width: var(--maxw); margin: 0 auto; padding: 0 28px; }
+.panel .p-head { display: flex; align-items: baseline; gap: 22px; margin-bottom: 18px; }
+.panel .p-no { font-size: 13px; font-weight: 700; color: var(--accent); letter-spacing: 0.24em; }
+.panel .p-title { font-size: clamp(40px, 6vw, 72px); font-weight: 900; letter-spacing: -0.03em; line-height: 1.05; }
+.panel .p-sub { margin-top: 14px; font-size: 15px; font-weight: 600; color: var(--gray); letter-spacing: 0.02em; max-width: 30em; }
+
+.panel .p-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; margin-top: 44px; align-items: start; }
+.panel .p-grid.rev { grid-template-columns: 1fr 1.15fr; }
+@media (max-width: 900px) { .panel .p-grid, .panel .p-grid.rev { grid-template-columns: 1fr; } }
+
+.panel .p-fig .fig { background: #fff; }
+.panel .p-fig .fig img { width: 100%; display: block; }
+.panel .p-fig .fig.plain {
+  padding: 34px; min-height: 300px; display: flex; flex-direction: column;
+  justify-content: space-between; border: 2px solid var(--ink);
+}
+.panel .p-cap { margin-top: 14px; font-size: 12px; color: var(--gray); letter-spacing: 0.1em; }
+
+.panel .p-body { font-size: 16px; line-height: 2.1; color: var(--ink); }
+.panel .p-body em { font-style: normal; color: var(--accent); font-weight: 600; }
+.panel .p-body p { margin-bottom: 1.4em; }
+.panel .p-plate {
+  margin-top: 34px; padding-top: 20px; border-top: 3px solid var(--ink);
+  display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+}
+.panel .p-plate .t { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; }
+.panel .p-plate .m { font-size: 11.5px; color: var(--gray); }
+.panel .p-plate .go {
+  margin-left: auto; font-size: 12.5px; font-weight: 600; color: var(--ink);
+  text-decoration: none; border-bottom: 2px solid var(--accent); padding-bottom: 3px;
+}
+.panel .p-plate .go:hover { color: var(--accent); }
+
+/* 结语板 */
+.wall-end { max-width: var(--maxw); margin: 0 auto; padding: 100px 28px 110px; }
+.wall-end h2 { font-weight: 900; letter-spacing: -0.03em; font-size: clamp(36px, 5vw, 60px); }
+.wall-end .ends { margin-top: 44px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+@media (max-width: 800px) { .wall-end .ends { grid-template-columns: 1fr; } }
