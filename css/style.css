@@ -803,3 +803,62 @@ body.film-theme { background: #000; color: #fff; }
 .reel .disc { width: 74px; height: 74px; border-radius: 50%; border: 3px solid #ddd8cc; position: relative; }
 .reel .disc::before { content: ""; position: absolute; inset: 14px; border-radius: 50%; border: 2px dashed #ddd8cc; }
 .reel .disc::after { content: ""; position: absolute; inset: 27px; border-radius: 50%; background: #ddd8cc; }
+
+/* ============ 概念设定集 mockup ============ */
+:root .concept-theme, .concept-theme { --serif-h: Georgia, "Songti SC", "STSong", serif; }
+
+.concept { background: #131313; color: #f2f0ea; }
+.concept .site-head { background: #131313; border-bottom: 1px solid #262626; }
+.concept .site-head a, .concept .site-head .nav a { color: #f2f0ea; }
+.concept .lang-toggle { border-color: #3a3a3a; color: #f2f0ea; }
+
+/* 封面 */
+.concept-cover { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 110px 28px; position: relative; }
+.concept-cover .cc-kicker { font-family: "Courier New", Courier, monospace; font-size: 11px; letter-spacing: 0.4em; color: #7a7a74; text-transform: uppercase; }
+.concept-cover .cc-title { font-family: Georgia, "Songti SC", "STSong", serif; font-size: clamp(56px, 10vw, 132px); line-height: 1.02; letter-spacing: -0.01em; font-weight: 400; margin-top: 46px; }
+.concept-cover .cc-title em { font-style: italic; color: #c8a86a; }
+.concept-cover .cc-sub { font-family: "Courier New", Courier, monospace; font-size: 12px; letter-spacing: 0.3em; color: #8a8a82; margin-top: 26px; text-transform: uppercase; }
+.concept-cover .cc-rule { margin-top: 60px; max-width: 30em; font-size: 15px; line-height: 2.1; color: #b8b8b0; }
+.concept-cover .cc-tc { position: absolute; bottom: 40px; left: 28px; font-family: "Courier New", Courier, monospace; font-size: 11px; letter-spacing: 0.2em; color: #5a5a54; }
+.concept-cover .cc-frame { position: absolute; bottom: 40px; right: 28px; font-family: "Courier New", Courier, monospace; font-size: 11px; letter-spacing: 0.2em; color: #5a5a54; }
+
+/* 概念图 + 注释线 */
+.concept-plate { max-width: var(--maxw); margin: 0 auto; padding: 90px 28px; }
+.concept-plate .cp-lab { font-family: "Courier New", Courier, monospace; font-size: 11px; letter-spacing: 0.34em; color: #7a7a74; text-transform: uppercase; margin-bottom: 30px; }
+.concept-fig { position: relative; margin: 30px 0; }
+.concept-fig img { width: 100%; display: block; filter: saturate(0.86) contrast(1.06); }
+.concept-fig .note { position: absolute; font-family: Georgia, "Songti SC", serif; font-size: 12.5px; color: #fff; background: rgba(0,0,0,0.55); padding: 4px 10px; letter-spacing: 0.02em; }
+.concept-fig .note .n { font-family: "Courier New", Courier, monospace; font-size: 10px; color: #c8a86a; margin-right: 6px; }
+.concept-fig .ln { position: absolute; height: 1px; background: rgba(255,255,255,0.7); }
+.concept-fig .ln::after { content: ""; position: absolute; right: 0; top: -3px; border-top: 1px solid rgba(255,255,255,0.7); border-right: 1px solid rgba(255,255,255,0.7); width: 5px; height: 5px; }
+
+/* 章节卡（设定集式） */
+.set-chapter { padding: 100px 28px; border-top: 1px solid #262626; }
+.set-chapter .sc-in { max-width: var(--maxw); margin: 0 auto; }
+.set-chapter .sc-no { font-family: "Courier New", Courier, monospace; font-size: 12px; letter-spacing: 0.3em; color: #c8a86a; }
+.set-chapter .sc-title { font-family: Georgia, "Songti SC", "STSong", serif; font-size: clamp(40px, 6.4vw, 76px); margin-top: 14px; line-height: 1.15; font-weight: 400; }
+.set-chapter .sc-en { font-family: "Courier New", Courier, monospace; font-size: 11px; letter-spacing: 0.3em; color: #6a6a64; text-transform: uppercase; margin-top: 12px; }
+.set-chapter .sc-body { display: grid; grid-template-columns: 1.2fr 1fr; gap: 50px; margin-top: 46px; align-items: start; }
+@media (max-width: 900px) { .set-chapter .sc-body { grid-template-columns: 1fr; } }
+.set-chapter .sc-body p { font-size: 15px; line-height: 2.1; color: #b8b8b0; }
+.set-chapter .sc-body p b { color: #f2f0ea; }
+.set-chapter .sc-body p em { font-style: italic; color: #c8a86a; }
+.set-chapter .sc-go { display: inline-block; margin-top: 26px; font-family: "Courier New", Courier, monospace; font-size: 11px; letter-spacing: 0.24em; color: #f2f0ea; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid #c8a86a; padding-bottom: 4px; }
+.set-chapter .sc-go:hover { color: #c8a86a; }
+
+/* 色板 */
+.palette { display: flex; gap: 0; margin-top: 40px; border: 1px solid #262626; }
+.palette .sw { flex: 1; height: 90px; position: relative; }
+.palette .sw .l { position: absolute; bottom: 8px; left: 10px; font-family: "Courier New", Courier, monospace; font-size: 9px; color: rgba(255,255,255,0.85); letter-spacing: 0.1em; }
+.palette .sw .h { position: absolute; top: 8px; right: 10px; font-family: "Courier New", Courier, monospace; font-size: 9px; color: rgba(255,255,255,0.6); }
+
+/* 金句（设定集引言） */
+.concept-quote { max-width: 900px; margin: 0 auto; padding: 120px 28px; text-align: center; }
+.concept-quote .cq { font-family: Georgia, "Songti SC", "STSong", serif; font-size: clamp(26px, 4vw, 46px); line-height: 1.6; font-weight: 400; }
+.concept-quote .cq em { font-style: italic; color: #c8a86a; }
+.concept-quote .cq-src { margin-top: 26px; font-family: "Courier New", Courier, monospace; font-size: 11px; letter-spacing: 0.3em; color: #6a6a64; text-transform: uppercase; }
+
+/* 片尾 */
+.concept-end { padding: 100px 28px 120px; border-top: 1px solid #262626; text-align: center; }
+.concept-end .ce-mail { font-family: Georgia, "Songti SC", serif; font-size: 20px; color: #f2f0ea; text-decoration: none; border-bottom: 1px solid #c8a86a; padding-bottom: 3px; }
+.concept-end .ce-xhs { margin-top: 16px; font-family: "Courier New", Courier, monospace; font-size: 11px; letter-spacing: 0.24em; color: #6a6a64; }
